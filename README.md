@@ -1,12 +1,14 @@
-#some bash shells i need
+# some bash shells i need
 
 ```bash
 
 #!/bin/bash
 ### Genrating genome fasta file with proper header,like "ch1"
-i=0
+
 # chromsome array
 arr=(1 2 3 4 5 x y)
+
+i=0
 zcat $1 | while read line
 do
         if [[ ${line:0:1} == \>  ]]
@@ -22,6 +24,6 @@ do
 done
 
 echo "done"
-~
+
 
 ```
