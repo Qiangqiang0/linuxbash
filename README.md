@@ -1,5 +1,4 @@
-# some bash shells i need
-
+#Bioinformatics scripts bash and python
 ```bash
 
 #!/bin/bash
@@ -24,6 +23,29 @@ do
 done
 
 echo "done"
+
+
+```
+
+
+```bash
+#~/usr/bin/python3
+### Filter sam data with proper tag,for details, go to
+import sys
+def filter_sam(f,o):
+        with open(f,"r") as f:
+                with open(o,"w") as o:
+                        for line in f:
+                                #print(line)
+                                if line.startswith("@"):
+                                        o.write(line)
+                                else:
+                                        l = line.split()
+                                        if int(l[1]) in [83,99,147,163]:
+                                                o.write(line)
+
+
+filter_sam(sys.argv[1],sys.argv[2])
 
 
 ```
